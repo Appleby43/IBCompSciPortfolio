@@ -9,18 +9,12 @@ public class AndTest {
 
     @Test
     public void compute() {
-        And and1 = new And();
+        And and = new And();
 
-        and1.compute(true,true);
-        assertEquals(true,and1.out);
+        assertTrue(and.compute(true, true));
 
-        and1.compute(true,false);
-        assertEquals(false,and1.out);
-
-        and1.compute(false,true);
-        assertEquals(false,and1.out);
-
-        and1.compute(false,false);
-        assertEquals(false,and1.out);
+        assertFalse(and.compute(false, true));
+        assertFalse(and.compute(true, false));
+        assertFalse(and.compute(false, false));
     }
 }

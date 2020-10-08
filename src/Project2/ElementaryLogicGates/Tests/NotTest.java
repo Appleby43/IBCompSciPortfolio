@@ -10,12 +10,9 @@ public class NotTest {
 
     @Test
     public void compute() {
-        Not not1 = new Not();
+        Not not = new Not();
 
-        not1.compute(true);
-        assertEquals(false,not1.out);
-
-        not1.compute(false);
-        assertEquals(true,not1.out);
+        assertTrue(not.compute(false));
+        assertFalse(not.compute(true));
     }
 }
