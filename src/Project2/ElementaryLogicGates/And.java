@@ -5,6 +5,6 @@ public class And {
     private Not not = new Not();
 
     public boolean compute(boolean a, boolean b){
-        return  not.compute(nand.compute(a,b));
+        return not.compute(nand.compute(a,b));
     }
 }

@@ -9,18 +9,11 @@ public class XorTest {
 
     @Test
     public void compute() {
-        Xor xor1 = new Xor();
-        xor1.compute(true, true);
-        assertEquals(false, xor1.out);
+        Xor xor = new Xor();
 
-        xor1.compute(true, false);
-        assertEquals(true, xor1.out);
-
-        xor1.compute(false, true);
-        assertEquals(true, xor1.out);
-
-        xor1.compute(false, false);
-        assertEquals(false, xor1.out);
-
+        assertTrue(xor.compute(true, false));
+        assertTrue(xor.compute(false, true));
+        assertFalse(xor.compute(false,false));
+        assertFalse(xor.compute(true,true));
     }
 }
