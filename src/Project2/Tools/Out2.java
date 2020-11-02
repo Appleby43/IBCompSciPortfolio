@@ -1,8 +1,5 @@
 package Project2.Tools;
 
-/**
- * Returnable  object containing two booleans
- */
 public class Out2 {
     public final boolean a, b;
 
