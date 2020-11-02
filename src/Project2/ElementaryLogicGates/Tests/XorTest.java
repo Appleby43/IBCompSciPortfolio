@@ -11,9 +11,9 @@ public class XorTest {
     public void compute() {
         Xor xor = new Xor();
 
-        assertTrue(xor.compute(true, false));
-        assertTrue(xor.compute(false, true));
-        assertFalse(xor.compute(false,false));
-        assertFalse(xor.compute(true,true));
+        assertTrue(xor.calc(true, false));
+        assertTrue(xor.calc(false, true));
+        assertFalse(xor.calc(false,false));
+        assertFalse(xor.calc(true,true));
     }
 }

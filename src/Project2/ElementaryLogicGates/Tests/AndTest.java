@@ -11,10 +11,10 @@ public class AndTest {
     public void compute() {
         And and = new And();
 
-        assertTrue(and.compute(true, true));
+        assertTrue(and.calc(true, true));
 
-        assertFalse(and.compute(false, true));
-        assertFalse(and.compute(true, false));
-        assertFalse(and.compute(false, false));
+        assertFalse(and.calc(false, true));
+        assertFalse(and.calc(true, false));
+        assertFalse(and.calc(false, false));
     }
 }

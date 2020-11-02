@@ -11,9 +11,9 @@ public class NandTest {
     public void compute() {
         Nand nand = new Nand();
 
-        assertTrue(nand.compute(false, false));
-        assertTrue(nand.compute(true, false));
-        assertTrue(nand.compute(false, true));
-        assertFalse(nand.compute(true, true));
+        assertTrue(nand.calc(false, false));
+        assertTrue(nand.calc(true, false));
+        assertTrue(nand.calc(false, true));
+        assertFalse(nand.calc(true, true));
     }
 }

@@ -11,19 +11,19 @@ public class DmuxTest {
     public void compute() {
         Dmux dmux1 = new Dmux();
 
-        dmux1.compute(false,false);
+        dmux1.calc(false,false);
         assertEquals(false,dmux1.a);
         assertEquals(false,dmux1.b);
 
-        dmux1.compute(true,false);
+        dmux1.calc(true,false);
         assertEquals(true,dmux1.a);
         assertEquals(false,dmux1.b);
 
-        dmux1.compute(false,true);
+        dmux1.calc(false,true);
         assertEquals(false,dmux1.a);
         assertEquals(false,dmux1.b);
 
-        dmux1.compute(true,true);
+        dmux1.calc(true,true);
         assertEquals(false,dmux1.a);
         assertEquals(true,dmux1.b);
 

@@ -9,7 +9,7 @@ public class Dmux {
 
     }
 
-    public void compute(boolean in, boolean sel){
+    public void calc(boolean in, boolean sel){
 
     }
 }

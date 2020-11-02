@@ -9,31 +9,22 @@ public class MuxTest {
 
     @Test
     public void compute() {
-        Mux mux1 = new Mux();
+        Mux mux = new Mux();
 
-        mux1.compute(false,false,false);
-        assertEquals(false,mux1.out);
+        assertFalse(mux.calc(false, false, false));
 
-        mux1.compute(false,true,false);
-        assertEquals(false,mux1.out);
+        assertFalse(mux.calc(false, true, false));
 
-        mux1.compute(true,false,false);
-        assertEquals(true,mux1.out);
+        assertTrue(mux.calc(true,false,false));
 
-        mux1.compute(true,true,false);
-        assertEquals(true,mux1.out);
+        assertTrue(mux.calc(true, true, false));
 
-        mux1.compute(false,false,true);
-        assertEquals(false,mux1.out);
+        assertFalse(mux.calc(false, false, true));
 
-        mux1.compute(false,true,true);
-        assertEquals(true,mux1.out);
+        assertTrue(mux.calc(false,true,true));
 
-        mux1.compute(true,false,true);
-        assertEquals(false,mux1.out);
+        assertFalse(mux.calc(true, false, true));
 
-        mux1.compute(true,true,true);
-        assertEquals(true,mux1.out);
-
+        assertTrue(mux.calc(true, true, true));
     }
 }

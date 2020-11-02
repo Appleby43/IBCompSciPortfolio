@@ -5,8 +5,8 @@ public class Xor {
     private And and1 = new And(), and2 = new And();
     private Not not1 = new Not(), not2 = new Not();
 
-    public boolean compute(boolean a, boolean b){
-        return or.compute(and1.compute(not1.compute(a),b),
-                and2.compute(a, not2.compute(b)));
+    public boolean calc(boolean a, boolean b){
+        return or.calc(and1.calc(not1.calc(a),b),
+                and2.calc(a, not2.calc(b)));
     }
 }

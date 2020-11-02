@@ -12,7 +12,7 @@ public class NotTest {
     public void compute() {
         Not not = new Not();
 
-        assertTrue(not.compute(false));
-        assertFalse(not.compute(true));
+        assertTrue(not.calc(false));
+        assertFalse(not.calc(true));
     }
 }
