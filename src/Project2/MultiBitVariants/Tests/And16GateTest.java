@@ -2,6 +2,7 @@ package Project2.MultiBitVariants.Tests;
 
 import Project2.MultiBitVariants.And16;
 import Project2.Tools.BMath;
+import Project2.Tools.Bus16;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,11 +13,10 @@ public class And16GateTest {
     public void compute() {
         And16 and16 = new And16();
 
-        boolean[] a = BMath.stringToBooleanArray("11111111111111111");
-        boolean[] b = BMath.stringToBooleanArray("00001111111111111");
-        and16.compute(a,b);
-        boolean[] expected = BMath.stringToBooleanArray("00001111111111111");
-        assertArrayEquals(expected,and16.out);
-
+        Bus16 a = new Bus16("1111111111111111");
+        Bus16 b = new Bus16("0000111111111111");
+        Bus16 out = and16.compute(a,b);
+        Bus16 expected = new Bus16("0000111111111111");
+        assertEquals(expected, out);
     }
 }
