@@ -54,6 +54,17 @@ public class Board {
         return State.EMPTY;
     }
 
+    /**
+     * @return whether or not the board can be played on
+     */
+    public boolean isPlayable(){
+        for (Cell[] arr : cells) {
+            for (Cell c : arr) {
+                if (c.getState().equals(State.EMPTY)) return true;
+            }
+        }
+        return false;
+    }
     public void printBoard(){
         System.out.println("  0   1   2 ");
         String line1 = String.format("0 %1$c | %2$c | %3$s", cells[0][0].getState().value, cells[0][1].getState().value, cells[0][2].getState().value);
