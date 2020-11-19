@@ -1,12 +1,22 @@
 package project3;
 
-import Project2.ElementaryLogicGates.Dmux;
-import Project2.Tools.Out2;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BoardTest {
+
+    @Test
+    public void testDiagonalVictor() {
+        Board b = new Board();
+        b.claimCell(0,0, Cell.State.O);
+        b.claimCell(1,1, Cell.State.O);
+        b.claimCell(2,2, Cell.State.O);
+
+//        b.printBoard();
+
+        assertEquals(b.checkForVictor(), Cell.State.O);
+    }
 
     @Test
     public void testVerticalVictor() {

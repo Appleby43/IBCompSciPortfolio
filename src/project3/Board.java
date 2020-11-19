@@ -27,35 +27,29 @@ public class Board {
     public State checkForVictor(){
         //check horizontal and vertical patterns
         for (int i = 0; i < cells.length; i++) {
-            State previousState = null;
-            for (int j = 0; j < cells.length; j++) {
-                State currentState = cells[i][j].getState();
-                if(currentState == State.EMPTY) break;
-                if(previousState != null && currentState != previousState) break;
+            Series series = new Series(cells[i][0], cells[i][1], cells[i][2]);
 
-                //if this is the last cell in the pattern
-                if (j == cells.length - 1){
-                    return currentState;
-                }
-                previousState = currentState;
-            }
+            State victor = series.checkVictor();
+            if (!victor.equals(State.EMPTY)) return victor;
         }
 
         for (int i = 0; i < cells.length; i++) {
-            State previousState = null;
-            for (int j = 0; j < cells.length; j++) {
-                State currentState = cells[j][i].getState();
-                if(currentState == State.EMPTY) break;
-                if(previousState != null && currentState != previousState) break;
+            Series series = new Series(cells[0][i], cells[1][i], cells[2][i]);
 
-                //if this is the last cell in the pattern
-                if (j == cells.length - 1){
-                    return currentState;
-                } else {
-                    previousState = currentState;
-                }
-            }
+            State victor = series.checkVictor();
+            if (!victor.equals(State.EMPTY)) return victor;
         }
+
+        //check diagonals
+        Series diag1 = new Series(cells[0][0], cells[1][1], cells[2][2]);
+
+        State victor1 = diag1.checkVictor();
+        if (!victor1.equals(State.EMPTY)) return victor1;
+
+        Series diag2 = new Series(cells[0][2], cells[1][1], cells[2][0]);
+
+        State victor2 = diag2.checkVictor();
+        if (!victor2.equals(State.EMPTY)) return victor2;
 
         return State.EMPTY;
     }
