@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class BoardTest {
 
     @Test
-    public void testDiagonalVictor() {
+    public void testDiagonalVictor() throws CellOccupiedException{
         Board b = new Board();
         b.claimCell(0,0, Cell.State.O);
         b.claimCell(1,1, Cell.State.O);
@@ -19,7 +19,7 @@ public class BoardTest {
     }
 
     @Test
-    public void testVerticalVictor() {
+    public void testVerticalVictor() throws CellOccupiedException{
         Board b = new Board();
         b.claimCell(0,0, Cell.State.O);
         b.claimCell(1,0, Cell.State.O);
@@ -29,7 +29,7 @@ public class BoardTest {
     }
 
     @Test
-    public void testHorizontalVictor() {
+    public void testHorizontalVictor() throws CellOccupiedException{
         Board b = new Board();
         b.claimCell(2,0, Cell.State.X);
         b.claimCell(2,1, Cell.State.X);
@@ -45,7 +45,7 @@ public class BoardTest {
     }
 
     @Test
-    public void testPrint() {
+    public void testPrint() throws CellOccupiedException{
        Board b = new Board();
 
        b.claimCell(0,0, Cell.State.X);

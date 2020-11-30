@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 /**
  * Main control loop
+ *
+ * To run in ZSH, run java -cp {PATH_TO_PROJECT}/IBCompSciPortfolio/out/production/com.ahs.IBCompSci project3.Main
  */
 public class Main {
    private static Scanner scanner = new Scanner(System.in);
@@ -17,9 +19,8 @@ public class Main {
            board.printBoard();
 
            System.out.println(player.value + " to play. Enter a coordinate in the form row, column");
-           int[] coords = prompt();
+           promptAndClaim(board, player);
 
-           board.claimCell(coords[0], coords[1], player);
 
            //check for a win
            Cell.State victor = board.checkForVictor();
@@ -38,7 +39,7 @@ public class Main {
        System.out.println("Game Over.");
    }
 
-   private static int[] prompt(){
+   private static void promptAndClaim(Board board, Cell.State player){
        try {
            String in = scanner.nextLine();
            int commaIndex = in.indexOf(',');
@@ -51,14 +52,18 @@ public class Main {
 
 
            if (col < 3 && row < 3 && col >= 0 && row >= 0) {
-               return new int[]{row, col};
+               board.claimCell(row, col, player);
            }
            else throw new IndexOutOfBoundsException();
 
        } catch (ParseException | IndexOutOfBoundsException e){
            System.out.println("Failed to parse input. Try again.");
 
-           return prompt();
+           promptAndClaim(board, player);
+       } catch (CellOccupiedException e){
+           System.out.println("That cell is already occupied. Try again.");
+
+           promptAndClaim(board, player);
        }
    }
 }

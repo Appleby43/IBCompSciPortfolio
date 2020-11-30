@@ -16,7 +16,7 @@ public class Board {
         }
     }
 
-    public void claimCell(int i, int j, State state){
+    public void claimCell(int i, int j, State state) throws CellOccupiedException{
         cells[i][j].setState(state);
     }
 

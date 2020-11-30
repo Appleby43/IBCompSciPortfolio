@@ -18,8 +18,8 @@ public class Cell {
         public final char value;
     }
 
-    public void setState(State newState){
-        assert state == State.EMPTY;
+    public void setState(State newState) throws CellOccupiedException{
+        if(state != State.EMPTY) throw new CellOccupiedException();
         assert newState != State.EMPTY;
 
         state = newState;
