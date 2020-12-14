@@ -10,8 +10,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         NumberParser numberParser = new NumberParser("/project4/nums.txt");
 
-
-
     }
 
     public static double avg(List<Double> nums){
